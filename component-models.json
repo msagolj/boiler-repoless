@@ -20,6 +20,81 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "checkbox-group",
+        "name": "enableBreadcrumb",
+        "valueType": "string",
+        "description": "Select this checkbox to display the breadcrumb on the page",
+        "options": [
+          {
+            "name": "Enable Breadcrumb",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "name": "breadcrumb",
+        "label": "Breadcrumb Fields",
+        "valueType": "string",
+        "condition": {
+          "in": [
+            "true",
+            {
+              "var": "enableBreadcrumb"
+            }
+          ]
+        },
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "navigationTitle",
+            "label": "Navigation Title",
+            "required": true
+          },
+          {
+            "component": "select",
+            "name": "breadcrumbType",
+            "label": "Breadcrumb Type",
+            "description": "Select type of breadcrumb desired",
+            "required": true,
+            "value": "complete",
+            "options": [
+              {
+                "name": "Partial",
+                "value": "partial"
+              },
+              {
+                "name": "Complete",
+                "value": "complete"
+              }
+            ]
+          },
+          {
+            "component": "select",
+            "name": "categorization",
+            "label": "Categorization",
+            "description": "Select the navigation for breadcrumb to the Home Page",
+            "value": "consumer",
+            "required": true,
+            "options": [
+              {
+                "name": "Consumer Home Page",
+                "value": "consumer"
+              },
+              {
+                "name": "HCP Home Page",
+                "value": "hcp"
+              },
+              {
+                "name": "Employers Home Page",
+                "value": "employers"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
