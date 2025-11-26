@@ -12,6 +12,13 @@
         {
           "component": "text",
           "valueType": "string",
+          "name": "testmulti",
+          "label": "Title",
+          "multi": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
           "name": "jcr:description",
           "label": "Description"
         },
